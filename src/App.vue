@@ -1,7 +1,14 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="bg-slate-300">
+    <router-link
+      to="/"
+      class="max-w-lg"
+      exact-active-class="bg-pink-900 text-white"
+      >Home</router-link
+    >
+    | <router-link to="/quotes">Quotes</router-link> |
+    <router-link to="/authors">Authors</router-link> |
+    <router-link to="/about">Github</router-link>
   </nav>
   <router-view />
 </template>
