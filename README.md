@@ -1,4 +1,4 @@
-# gw2-quote-frontend
+# frontend
 
 ## Project setup
 ```
