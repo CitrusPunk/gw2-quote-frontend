@@ -1,39 +1,43 @@
 <template>
   <input
     type="text"
-    class="form-control"
+    class="border rounded-l-lg m-4 mr-0 px-2 py-1"
     placeholder="Search by Text"
     v-model="text"
   />
-  <div class="input-group-append">
-    <button
-      class="bg-amber-500 hover:bg-amber-700 text-white px-2 py-1 rounded-lg"
-      type="button"
-      @click="searchTitle"
-    >
-      Search
-    </button>
-  </div>
-  <div>
-    <h4>Quotes List</h4>
-    <ul>
+  <button
+    class="bg-amber-500 hover:bg-amber-600 text-white m-4 ml-0 px-2 py-1 rounded-r-lg"
+    type="button"
+    @click="searchTitle"
+  >
+    Search
+  </button>
+  <div class="flex flex-col w-1/2 m-auto text-center">
+    <h4 class="font-semibold">Quotes List</h4>
+    <ul class="flex flex-col">
       <li
+        class="bg-red-700 hover:bg-red-800 text-white my-2 rounded-md shadow-md shadow-red-800 p-2"
         :class="{ active: index == currentIndex }"
         v-for="(quote, index) in quotes"
         :key="index"
         @click="setActiveQuote(quote, index)"
       >
-        {{ quote.text }}
+        <div>{{ quote.text }}</div>
+        <div class="flex justify-end">
+          <div class="bg-red-600 hover:bg-red-700 px-2 py-1 rounded-md">
+            Author Name
+          </div>
+        </div>
       </li>
     </ul>
     <button
-      class="bg-amber-500 hover:bg-amber-700 text-white px-2 py-1 rounded-lg"
+      class="bg-amber-500 hover:bg-amber-600 text-white px-2 py-1 rounded-lg"
       @click="removeAllQuotes"
     >
       Remove All
     </button>
   </div>
-  <div class="col-md-6">
+  <div>
     <div v-if="currentQuote.id">
       <h4>Quote</h4>
       <div>
