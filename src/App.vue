@@ -1,14 +1,12 @@
 <template>
-  <nav class="bg-slate-300">
-    <router-link
-      to="/"
-      class="max-w-lg"
-      exact-active-class="bg-pink-900 text-white"
-      >Home</router-link
+  <nav class="bg-red-700 child:max-w-lg child:m-2 child:px-2 child:py-8 p-8">
+    <router-link to="/" exact-active-class="text-white">Quotes</router-link>
+    <router-link to="/authors" exact-active-class="text-white"
+      >Authors</router-link
     >
-    | <router-link to="/quotes">Quotes</router-link> |
-    <router-link to="/authors">Authors</router-link> |
-    <router-link to="/about">Github</router-link>
+    <router-link to="/about" exact-active-class="text-white"
+      >Github</router-link
+    >
   </nav>
   <router-view />
 </template>
